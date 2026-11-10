@@ -1,0 +1,14 @@
+# Ignore virtual environments anywhere
+.venv/
+# Python cache directories (anywhere)
+__pycache__/
+
+# Python compiled files
+*.py[cod]
+
+# Ignore environment variable files anywhere
+.env
+.env.*
+
+# Allow example environment files
+!.env.example

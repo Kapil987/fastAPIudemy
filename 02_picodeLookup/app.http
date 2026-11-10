@@ -1,0 +1,33 @@
+### ==========================================
+### SECTION 1: Variables
+### ==========================================
+@hostname = localhost
+@port = 8000
+@host = http://{{hostname}}:{{port}}
+@authToken = secret-bearer-token-xyz123
+
+# Root path request
+GET {{host}}
+
+### ==========================================
+### SECTION 2: Single Pincode Endpoints
+### ==========================================
+
+# @name getSinglePincode
+GET {{host}}/pincode/411001
+
+###
+GET {{host}}/pincode/380001
+
+
+### ==========================================
+### SECTION 2: Bulk Operations
+### ==========================================
+
+# @name postBulkPincodes
+POST {{host}}/pincode/bulk
+Content-Type: application/json
+
+{
+  "pincodes": ["411001", "380001","124369","jhgjkg"]
+}

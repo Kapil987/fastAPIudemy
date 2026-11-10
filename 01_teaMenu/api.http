@@ -1,0 +1,26 @@
+@baseUrl = http://127.0.0.1:8000
+
+### Home
+GET {{baseUrl}}/
+
+### Get Menu
+GET {{baseUrl}}/menu
+
+### Search for item id
+GET {{baseUrl}}/menu/6
+
+### Create user
+# POST {{baseUrl}}/users
+# Content-Type: application/json
+
+# {
+#     "name": "John",
+#     "email": "john@example.com"
+# }
+
+### API with custom headers
+# GET http://127.0.0.1:8000/users
+
+# Authorization: Bearer my-secret-token
+# Content-Type: application/json
+# X-Client-ID: my-fastapi-app
