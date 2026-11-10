@@ -1,6 +1,6 @@
 from sqlmodel import SQLModel, Field
 from typing import Optional
-from datetime import datetime
+from datetime import datetime, timezone, UTC
 
 ## 1. Review class is a Database model
 class Review(SQLModel, table=True):
@@ -9,7 +9,7 @@ class Review(SQLModel, table=True):
     reviewer_name: str
     rating: int = Field(ge=1,le=5)
     comment: str
-    created_at: datetime = Field(default_factory=datetime.now)
+    created_at: datetime = Field(default_factory=lambda: datetime.now(UTC))
 
 # 2. ReviewCreate – API input model
 class ReviewCreate(SQLModel):
